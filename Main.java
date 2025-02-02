@@ -1,72 +1,145 @@
-import java.util.Scanner;
+public class Main{
 
-class Employee {
-    String name;
-    int age;
-    String address;
-    String phoneNumber;
-    float salary;
+  
 
-    void input() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter name:");
-        name = sc.nextLine();
-        System.out.println("Enter age:");
-        age = sc.nextInt();
-        sc.nextLine();  // consume newline left-over
-        System.out.println("Enter address:");
-        address = sc.nextLine();
-        System.out.println("Enter phone number:");
-        phoneNumber = sc.nextLine();
-        sc.close();
-    }
+    public static void main(String[] args) throws InterruptedException{  
 
-    void setSalary() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter salary:");
-        salary = sc.nextFloat();
-        sc.close();
-    }
 
-    float computeSalary() {
-        return salary;
-    }
+
+    	/*
+
+    	thread =	A thread of execution in a program (kind of like a virtual CPU)
+
+    				The JVM allows an application to have multiple threads running concurrently
+
+    				Each thread can execute parts of you code in parallel with the main thread
+
+    				Each thread has a priority.
+
+    				Threads with higher priority are executed in preference compared to threads with a lower priority
+
+    			
+
+    			    The Java Virtual Machine continues to execute threads until either of the following occurs
+
+    					1. The exit method of class Runtime has been called
+
+    					2. All user threads have died
+
+    					
+
+    				When a JVM starts up, there is a thread which calls the main method
+
+    				This thread is called “main”
+
+    						
+
+    				Daemon thread is a low priority thread that runs in background to perform tasks such as garbage collection 
+
+				JVM terminates itself when all user threads (non-daemon threads) finish their execution
+
+    	 */ 	
+
+    	
+
+    	
+
+    	//System.out.println(Thread.activeCount());
+
+    	
+
+    	//Thread.currentThread().setName("MAIN");
+
+    	//System.out.println(Thread.currentThread().getName());
+
+    	
+
+    	//Thread.currentThread().setPriority(10);
+
+    	//System.out.println(Thread.currentThread().getPriority());
+
+    	
+
+    	//System.out.println(Thread.currentThread().isAlive());
+
+    	/*
+
+    	for(int i =3;i>0;i--) {
+
+    		System.out.println(i);
+
+    		Thread.sleep(1000);
+
+    	}
+
+    	
+
+    	System.out.println("You are done!");
+
+    	*/
+
+    	
+
+    	//MyThread thread2 = new MyThread();
+
+    	
+
+    	//thread2.setDaemon(true);
+
+    	//System.out.println(thread2.isDaemon());
+
+    	
+
+    	//thread2.start();
+
+    	
+
+    	//System.out.println(thread2.isAlive());
+
+    	
+
+    	//thread2.setName("2nd thread");
+
+    	//System.out.println(thread2.getName());
+
+    	
+
+    	//thread2.setPriority(1);
+
+    	//System.out.println(thread2.getPriority());
+
+    	
+
+    	//System.out.println(Thread.activeCount());
+
+    } 
+
 }
 
-class Officer extends Employee {
-    String specialisation;
+//*******************************************************************
+class MyThread extends Thread{
 
-    void input() {
-        super.input();
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter specialisation:");
-        specialisation = sc.nextLine();
-        sc.close();
-    }
+
+
+	@Override
+
+	public void run() {
+
+		
+
+		if(this.isDaemon()) {
+
+		System.out.println("This is a daemon thread that is running");
+
+		}
+
+		else {
+
+			System.out.println("This is a user thread that is running");
+
+		}
+
+	}
+
 }
-
-class Manager extends Employee {
-    String department;
-
-    void input() {
-        super.input();
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter department:");
-        department = sc.nextLine();
-        sc.close();
-    }
-}
-
-public class Main {
-    public static void main(String[] args) {
-        Officer officer = new Officer();
-        officer.input();
-        officer.setSalary();
-        System.out.println("Officer's Salary: " + officer.computeSalary());
-
-        Manager manager = new Manager();
-        manager.input();
-        manager.setSalary();
-        System.out.println("Manager's Salary: " + manager.computeSalary());
-    }
-}
+//*******************************************************************

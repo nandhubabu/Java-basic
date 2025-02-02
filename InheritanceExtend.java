@@ -13,17 +13,9 @@ class Chef
 		System.out.println("The Cheif makes a special bbq");
 	}
 }
-class ItalianChef
+class ItalianChef extends Chef
 {
-	public void makeChicken()
-	{	
-		System.out.println("The Cheif makes a delicious Chicken");
-	}
-	public void makeSalad()
-	{
-		System.out.println("The Cheif makes a healthy Salad");
-	}
-	public void makeSpecialDish()
+	public void makeSpecialDish()//overrriding methods
 	{
 		System.out.println("The Cheif makes a eggplant parm");
 	}
@@ -33,17 +25,9 @@ class ItalianChef
 	}
         
 }
-class ChineseChef
+class ChineseChef extends Chef
 {
-	public void makeChicken()
-	{	
-		System.out.println("The Cheif makes a delicious Chicken");
-	}
-	public void makeSalad()
-	{
-		System.out.println("The Cheif makes a healthy Salad");
-	}
-	public void makeSpecialDish()
+	public void makeSpecialDish()//overrriding methods
 	{
 		System.out.println("The Cheif makes a orange chicken");
 	}
@@ -53,7 +37,7 @@ class ChineseChef
 	}
         
 }
-public class Inheritance
+public class InheritanceExtend
 {
 	public static void main(String args[])
 	{
